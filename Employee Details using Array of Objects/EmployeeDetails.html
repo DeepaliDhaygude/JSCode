@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./EmployeeDetails.js"></script>  
+  <title>Array Objects</title>
+  <style>
+    label{
+    font-size: 12px;
+    }
+    .bgGray{
+        background-color:lightgray;
+     
+    }
+    .cancelBtn
+    {
+        background-color:gray;
+    }
+    .saveBtn
+    {
+        background-color: darkgray;
+    }
+  </style>
+</head>
+<body >
+    <div class="container-fluid pt-2 ">
+        <div class="row">
+            <div class="col-md-4  ">
+                <div class="row d-flex justify-content-center bg-white text-dark " >
+                    
+                        <div class="row d-flex justify-content-center ">
+                            <div class="col-md-12">
+                                <h5 class="text-center">Employee Details Entry Form</h5>
+                            </div>
+                        </div>
+                    <div class="col-md-11 border bgGray">
+                        <div class="row d-flex justify-content-center pt-2">
+                            <div class="col-md-4 ">
+                                <label for="txtName">Name</label>                      
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control border border-dark" id="txtFirstName" placeholder="First Name">
+                                <span class="text-danger">Required</span>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control border border-dark" id="txtLastName" placeholder="Last Name">
+                                <span class="text-danger">Required</span>
+                            </div>                   
+                        </div>
+
+                        <div class="row d-flex justify-content-center pt-1">
+                            <div class="col-md-4">
+                                <label for="txtTechnology">Technology</label>                      
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control border border-dark" id="txtTechnology" placeholder="Technology">
+                                <span class="text-danger">Required</span>
+                            </div>              
+                        </div>
+                        <div class="row d-flex justify-content-center pt-1">
+                            <div class="col-md-4">
+                                <label for="txtDesignation">Designation</label>                      
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control border border-dark" id="txtDesignation" placeholder="Designation">
+                                <span class="text-danger">Required</span>
+                            </div>              
+                        </div>
+                        <div class="row d-flex justify-content-center pt-1">
+                            <div class="col-md-4">
+                                <label for="txtSkills">Skills</label>                      
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control border border-dark" type="select" id="txtSkills" name="txtSkills">                   
+                                    <option value="Dot Net">Dot Net</option>
+                                    <option value="Angular">Angular</option>
+                                    <option value="Java">Java</option>
+                                    <option value="React JS">React JS</option>
+                                    <option value="Node JS">Node JS</option>
+                                    
+                                  </select>
+                            </div>             
+                        </div>
+                        <div class="row d-flex justify-content-center pt-1">
+                            <div class="col-md-4">
+                                <label for="txtCoreExpertise">Core Expertise in</label>                      
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control border border-dark" id="txtCoreExpertise" placeholder="Core Expertise">
+                            </div>              
+                        </div> 
+                        <div class="row d-flex justify-content-center pt-1">
+                            <div class="col-md-4">
+                                <label for="txtCertifications">Certifications If any</label>                      
+                            </div>
+                            <div class="col-md-8">
+                                <label class="radio-inline">
+                                    <input type="radio" name="Certifications" value="yes">Yes
+                                  </label>
+                                  <label class="radio-inline">
+                                    <input type="radio" name="Certifications" value="no">No
+                                  </label>
+                            </div>              
+                        </div>
+                        <div class="row d-flex justify-content-end pt-1">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control border border-dark" id="txtCertifications" placeholder="Certifications">
+                            </div>              
+                        </div> 
+                        <div class="row d-flex justify-content-center pt-1">
+                            <div class="col-md-4">
+                                <label for="">Company</label>                      
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control border border-dark" id="txtCompany" placeholder="Company Name">
+                            </div>              
+                        </div>
+                        <div class="row d-flex justify-content-center pt-1">
+                            
+                                <label for="txtLines">Few Lines About Yourself</label>                      
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-12">
+                                <textarea class="form-control border border-dark" rows="2" id="txtLines" name="txtLines" placeholder="Few Lines"></textarea>
+                            </div>              
+                        </div>
+                        <div class="row d-flex justify-content-end pt-2 pb-2">
+                                <div class="col-md-3">
+                                    <button type="button" class="btn cancelBtn text-white " onclick="clearForm()">Cancel</button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="button" onclick="saveData()" class="btn saveBtn text-white">Save</button>  
+                                </div>
+                        </div>
+                        <div class="text-center text-success">
+                            <b id="footerMsg">
+                               
+                            </b>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-md-8 ">
+                <div class="row d-flex justify-content-center bg-white text-dark " id="displayTbl">                    
+                        <div class="row d-flex justify-content-center ">
+                            <div class="col-md-12">
+                                <h5 class="text-center">Employee List</h5>
+                            </div>
+                        </div>
+                    <div class="col-md-11 border bgGray">
+                        <div class="row pb-2">
+                            <div class="col-md-12 d-flex justify-content-end pt-2">
+                                <div class="col-md-3 ">
+                                    <input type="text" class="form-control border border-dark " id="txtSortBy" placeholder="Select Sort By">
+                                </div>  
+                                <div class="col-md-3 mx-3">
+                                    <input type="text" class="form-control border border-dark " id="txtSearchText" placeholder="Search Text">
+                                </div>
+                            </div>
+                        </div>
+                        <table id="tblData" class="table table-bordered border-dark">
+                            <thead>
+                              <tr>
+                                <th>Sr</th>
+                                <th>Name</th>
+                                <th>Technology</th>
+                                <th>Designation</th>
+                                <th>Skill</th>
+                                <th>Core Expertise</th>
+                                <th>Company</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead> 
+                            <tbody>
+                                 
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> <!--Row end-->       
+    </div> <!--Container end-->
+</body>
+</html>
