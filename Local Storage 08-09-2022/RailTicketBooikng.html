@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="RailTicketBooking.js"></script>
+    
+    <link rel="stylesheet" href="RailTicketBooking.css">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<title>Rail Ticket Booking Form</title>
+</head>
+<body>
+    <div class="container ">
+        <div class="row ">
+            
+            <form class=" p-5 mr-2 ml-2 mt-5 col-12">
+                
+                    <h2 class="text-center ">Rail Ticket Booking Form</h2>
+                    <hr>
+                    <br>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="quota">Reservation Quota</label>
+                                <select class="form-control" id="quota" onchange="" >
+                                
+                                  <option value="">Please Select</option>
+                                  <option value="firstclass">First Class</option>
+                                  <option value="secondclass">Second Class</option>
+                                  <option value="thirdclass">Third Class</option>
+                                  <option value="fourthclass">Fourth Class</option>
+                                </select>
+                        </div>
+                        
+                        <div class="form-group col">
+                            <label for="trainname">Train Name or Number</label>
+                            <input type="text" class="form-control" id="trainname" onblur="getFullname()" placeholder="Enter Train Name or Number">
+                        </div>  
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="journeyfrom">Journey From</label>
+                            <input type="text" class="form-control" id="journeyfrom" onblur="" placeholder="Enter Journey From">
+                            <small>Station Code or full station name</small>
+                        </div>
+                        
+                        <div class="form-group col">
+                            <label for="journeyto">Journey To</label>
+                            <input type="text" class="form-control" id="journeyto" onblur="" placeholder="Enter Journey To">
+                            <small>Destination Station Code or full station name</small>
+                        </div>  
+                    </div>    
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="departure">Departure/Journey Date</label>
+                            <div class="row">
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="day" onblur="" placeholder="Day">
+                                    <small>Day</small>
+                                </div> 
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="month" onblur="" placeholder="Month">
+                                    <small>Month</small>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="year" onblur="" placeholder="Year">
+                                    <small>Year</small>
+                                </div>
+                                <div class="col-3">
+                                    <i class="fa fa-calendar" style="font-size:36px;color:red"></i>
+                                </div>                               
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="nationality">Nationality</label>
+                            <div class="col">
+                                <input class="form-check-input" id="country" type="checkbox" onclick="onChcekboxChange()" value="" id="nationality">
+                                <span class="isindian">Is Indian</span> 
+                            </div>
+                            
+                        
+                        </div>
+                        
+                        <div class="form-group col" id="divCountry">
+                            <label for="">Country</label>
+                            <input type="text" class="form-control" id="txtcountry" onblur="" placeholder="Enter Country Name">
+                            
+                        </div>  
+                    </div>
+                    <hr>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="passengersdetails1">Passengers Details 1</label>
+                            <input type="text" class="form-control" id="passengersdetails1" onblur="" placeholder="Enter Full Name">
+                            <small>Full Name</small>
+                        </div>
+                        
+                        <div class="form-group col">
+                            <label for="age1">Age</label>
+                            <input type="text" class="form-control" id="age1" onblur="" placeholder="Example: 23">
+                        </div>  
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="sex1">Sex</label>
+                                <select class="form-control" id="sex1" onchange="" >
+                                    <option value="">Please Select</option>
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                  <option value="other">Other</option>
+                                </select>
+                        </div>
+                        
+                        <div class="form-group col">
+                            <label for="berthchoice1">Berth Choice</label>
+                                <select class="form-control" id="berthchoice1" onchange="" >
+                                  <option value="">Please Select</option>
+                                  <option value="lower">Lower</option>
+                                  <option value="middle">Middle</option>
+                                  <option value="upper">Upper</option>
+                                  <option value="sidelower">Side Lower</option>
+                                  <option value="sideupper">Side Upper</option>
+                                </select>
+                        </div>  
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="phonenumber1">Phone Number</label>
+                            <input type="text" class="form-control" id="phonenumber1" onblur="" placeholder="(000) 000-0000">
+                            <small>Please enter a valid phone number.</small>
+                        </div>
+                        
+                        <div class="form-group col">
+                            <label for="email1">Email</label>
+                            <input type="email" class="form-control" id="email1" onblur="" placeholder="Enter Email">
+                            <small>example@example.com</small>
+                        </div>  
+                    </div>
+
+                    <!-- <hr>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="passengersdetails2">Passengers Details 2</label>
+                            <input type="text" class="form-control" id="passengersdetails2" onblur="" placeholder="Enter Full Name">
+                            <small>Full Name</small>
+                        </div>
+                        
+                        <div class="form-group col">
+                            <label for="age2">Age</label>
+                            <input type="text" class="form-control" id="age2" onblur="" placeholder="Example: 23">
+                        </div>  
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="sex2">Sex</label>
+                                <select class="form-control" id="sex2" onchange="" >
+                                    <option value="">Please Select</option>
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                  <option value="other">Other</option>
+                                </select>
+                        </div>
+                        
+                        <div class="form-group col">
+                            <label for="berthchoice2">Berth Choice</label>
+                                <select class="form-control" id="berthchoice2" onchange="" >
+                                  <option value="">Please Select</option>
+                                  <option value="lower">Lower</option>
+                                  <option value="middle">Middle</option>
+                                  <option value="upper">Upper</option>
+                                  <option value="sidelower">Side Lower</option>
+                                  <option value="sideupper">Side Upper</option>
+                                </select>
+                        </div>  
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col" >
+                            <label for="phonenumber2">Phone Number</label>
+                            <input type="text" class="form-control" id="phonenumber2" onblur="" placeholder="(000) 000-0000">
+                            <small>Please enter a valid phone number.</small>
+                        </div>
+                        
+                        <div class="form-group col">
+                            <label for="email2">Email</label>
+                            <input type="email" class="form-control" id="email2" onblur="" placeholder="Enter Email">
+                            <small>example@example.com</small>
+                        </div>  
+                    </div>  -->
+                      
+                    <div class="row ml-3 mt-4 ">
+                        <div class="form-group">
+                            <input class="form-check-input" type="checkbox" value="" id="agree">
+                        <label class="form-check-label" for="agree">
+                            I agree to <a href="#">terms & conditions</a>.
+                        </label>
+                        </div> 
+                    </div>
+                   
+                    <div class="row ">
+                        <div class="col-auto pt-4">
+                            <button type="submit" class="btn btn-dark mb-2 mt-3" onclick="showFormDetails()">Submit</button>
+                          </div>
+                    </div>
+              </form>
+        </div> <!--end div row--> 
+
+        <div class="row">
+            <div class="col">
+                <label for="">Full Name : <span id="spanFullName"></span> </label>
+            </div>
+            <div class="col">
+                <label for="">Phone Number : <span id="spanPhoneNumber"></span> </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="">Reservation Quota : <span id="spanQuota"></span> </label>
+            </div>
+            <div class="col">
+                <label for="">Train Name or Number : <span id="spanTrainName"></span> </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="">Departure/Journey Date : <span id="spanDeparture"></span> </label>
+            </div>
+            <div class="col">
+                <label for="">Nationality : <span id="spanNationality"></span> </label>
+            </div>
+        </div>
+    </div> <!--end div container--> 
+</body>
+</html>

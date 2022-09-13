@@ -1,0 +1,24 @@
+body{
+    background-image: url('Background.png');
+    font-weight: bold;
+}
+hr{
+    height: 1px;
+    background-color: rgb(42, 167, 251);
+       
+}
+div.container{
+  
+   
+    font-weight: bold;
+  
+}
+form{
+  
+  color: #000000;
+  border-radius: 10px;
+  box-shadow: -3px -3px 9px #aaa9a9a2, 3px 3px 7px rgb(147 149 151 / 67%);
+}
+.isindian{
+    font-weight: 350;
+}
